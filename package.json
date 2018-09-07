@@ -1,0 +1,55 @@
+{
+  "name": "react-flickr-example",
+  "version": "1.0.0",
+  "description": "A simple app which shows the public Flickr recently uploaded feed",
+  "author": "Andres Alvarez <a.alvarez.sor@gmail.com>",
+  "main": "index.js",
+  "private": false,
+  "license": "MIT",
+  "engines": {
+    "node": ">=8"
+  },
+  "scripts": {
+    "start": "node server/index.js",
+    "client": "cd client && npm start",
+    "server": "nodemon --watch server server/index.js",
+    "server:docs": "apidoc -i server -o docs",
+    "dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\"",
+    "heroku-postbuild": "cd client && npm install && npm install --only=dev --no-shrinkwrap && npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andresz1/react-flickr-example.git"
+  },
+  "keywords": [
+    "react",
+    "express",
+    "redux"
+  ],
+  "bugs": {
+    "url": "https://github.com/andresz1/react-flickr-example/issues"
+  },
+  "homepage": "https://github.com/andresz1/react-flickr-example#readme",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "bluebird": "^3.5.2",
+    "body-parser": "^1.18.3",
+    "cors": "^2.8.4",
+    "dotenv-safe": "^6.0.0",
+    "express": "^4.16.3",
+    "express-validation": "^1.0.2",
+    "helmet": "^3.13.0",
+    "http-status": "^1.2.0",
+    "joi": "^13.6.0",
+    "method-override": "^3.0.0",
+    "morgan": "^1.9.0"
+  },
+  "devDependencies": {
+    "apidoc": "^0.17.6",
+    "concurrently": "^3.5.0",
+    "eslint": "^4.2.0",
+    "eslint-config-airbnb-base": "^12.0.1",
+    "eslint-plugin-import": "^2.2.0",
+    "nodemon": "^1.18.4"
+  }
+}

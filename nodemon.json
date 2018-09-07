@@ -1,0 +1,6 @@
+{
+  "events": {
+    "start": "npm run server:docs",
+    "restart": "npm run server:docs"
+  }
+}
