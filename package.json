@@ -15,6 +15,7 @@
     "server": "nodemon --watch server server/index.js",
     "server:docs": "apidoc -i server -o docs",
     "dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\"",
+    "test": "",
     "heroku-postbuild": "cd client && npm install && npm install --only=dev --no-shrinkwrap && npm run build"
   },
   "repository": {
