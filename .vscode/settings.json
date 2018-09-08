@@ -1,3 +1,4 @@
 {
+  "flow.pathToFlow": "${workspaceRoot}/client/node_modules/.bin/flow",
   "git.ignoreLimitWarning": true
 }
