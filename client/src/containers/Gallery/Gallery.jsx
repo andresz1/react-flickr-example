@@ -6,7 +6,7 @@ import InfiniteScroll from 'react-infinite-scroller';
 
 import PictureGrid from '../../components/PictureGrid';
 import { fetchPictures } from '../../actions/picture.js';
-import './styles.css';
+import './Gallery.css';
 
 type Props = {
   dispatch: Function,

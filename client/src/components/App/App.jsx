@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
 import Gallery from '../../containers/Gallery';
-import './styles.css';
+import './App.css';
 
 type Props = {};
 
