@@ -2,8 +2,12 @@
 
 import React from 'react';
 
-const PictureItem = () => (
-  <div>Picture Item</div>
+type Props = {
+  picture: Picture,
+};
+
+const PictureItem = (props: Props) => (
+  <div>{props.picture.title}</div>
 );
 
 export default PictureItem;

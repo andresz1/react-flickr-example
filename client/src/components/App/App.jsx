@@ -13,7 +13,7 @@ class App extends Component<Props> {
     return (
       <Router>
         <div className="App">
-          <h1>Hello world!</h1>
+          <h1>Flickr's latest photos</h1>
 
           <Route exact path="/" component={Gallery} />
         </div>
