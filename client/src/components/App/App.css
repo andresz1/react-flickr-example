@@ -1,3 +1,25 @@
-.App {
-  color: red;
-  text-align: center; }
+@import url('https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i');
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
+body {
+  font-family: 'Lato', sans-serif;
+  margin: 0;
+}
+
+a {
+  color: #FF0084;
+  text-decoration: none;
+}
+
+h1 {
+  margin: 0;
+}
+
+button:focus {
+  outline:0;
+}
+
+.title {
+  margin-top: 16px;
+  text-align: center;
+}

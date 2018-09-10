@@ -20,5 +20,7 @@ exports.getRecentPhotos = (page, limit, extras) => {
     method: 'flickr.photos.getRecent',
   };
 
-  return axios.get(SERVICE_URL, { params });
+  return axios.get(SERVICE_URL, { params })
+    .then(({ data }) => data)
+    .catch(error => error);
 };

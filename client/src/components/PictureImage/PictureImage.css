@@ -1,0 +1,18 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 180px;
+  background-color: #C2C2C2;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border: white solid 4px;
+  box-shadow: 0 4px 4px -2px rgba(0, 0, 0, 0.2);
+  transition: all 1s;
+  cursor: pointer;
+}
+
+.container:hover {
+  transform: scale(1.05);
+}

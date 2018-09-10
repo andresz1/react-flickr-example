@@ -1,0 +1,23 @@
+.container {
+  min-width: 280px;
+  max-width: 280px;
+  margin: 8px;
+}
+
+.header {
+  padding: 8px 0;
+}
+
+.title,
+.description {
+  width: 100%;
+  text-align: right;
+  font-size: 12px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.title {
+  color: #0063DC;
+}

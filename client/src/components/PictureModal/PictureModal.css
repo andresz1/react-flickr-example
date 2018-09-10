@@ -1,0 +1,53 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.modal {
+  position: relative;
+  color: white;
+}
+
+.content {
+  color: white;
+  position: absolute;
+  bottom: 0;
+  width: calc(100% - 16px);
+  padding: 8px;
+  font-size: 12px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.image {
+  max-width: 100%;
+  height: auto;
+  max-height: 70vh;
+}
+
+.btn {
+  width: fit-content;
+  border-style: none;
+  background-color: transparent;
+  cursor: pointer;
+  margin: 0 8px;
+}
+
+.btn i {
+  color: white;
+  font-size: 32px;
+}
+
+.close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  composes: btn;
+}

@@ -1,25 +1,23 @@
 // @flow
 
-import React, { Component } from 'react';
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import React from 'react';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 import Gallery from '../../containers/Gallery';
-import './App.css';
+import styles from './App.css';
 
 type Props = {};
 
-class App extends Component<Props> {
-  render() {
-    return (
-      <Router>
-        <div className="App">
-          <h1>Flickr's latest photos</h1>
+const App = (props: Props) => (
+  <Router>
+    <div>
+      <h1 className={styles.title}>
+        Flickr's latest photos
+      </h1>
 
-          <Route exact path="/" component={Gallery} />
-        </div>
-      </Router>
-    );
-  }
-}
+      <Route exact path="/" component={Gallery} />
+    </div>
+  </Router>
+);
 
 export default App;
