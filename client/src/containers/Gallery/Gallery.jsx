@@ -33,7 +33,7 @@ class Gallery extends Component<IProps> {
   handleNext() {
     const { dispatch, pictures } = this.props;
 
-    let index = pictures.photo.indexOf(pictures.selected) + 1;
+    let index: number = pictures.photo.indexOf(pictures.selected) + 1;
     index = index % pictures.photo.length;
 
     dispatch(selectPicture(pictures.photo[index]));
@@ -42,7 +42,7 @@ class Gallery extends Component<IProps> {
   handlePrevious() {
     const { dispatch, pictures } = this.props;
 
-    let index = pictures.photo.indexOf(pictures.selected) - 1;
+    let index: number = pictures.photo.indexOf(pictures.selected) - 1;
     index = (index < 0) ? pictures.photo.length - 1 : index;
 
     dispatch(selectPicture(pictures.photo[index]));
