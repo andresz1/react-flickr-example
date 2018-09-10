@@ -7,15 +7,15 @@ import { RotateSpinLoader } from 'react-css-loaders';
 
 import PictureGrid from '../../components/PictureGrid';
 import PictureModal from '../../components/PictureModal';
-import { fetchPictures, selectPicture } from '../../actions/picture.js';
+import { fetchPictures, selectPicture } from '../../actions/picturesActions.js';
+import type { IPicturesState } from '../../reducers/picturesReducer.js';
 
-type Props = {
+type IProps = {
   dispatch: Function,
-  pictures: any,
+  pictures: IPicturesState,
 };
-type State = {};
 
-class Gallery extends Component<Props, State> {
+class Gallery extends Component<IProps> {
   handleMore() {
     const { dispatch, pictures } = this.props;
 
@@ -24,7 +24,7 @@ class Gallery extends Component<Props, State> {
     }
   }
 
-  handleSelect(picture: Picture) {
+  handleSelect(picture: IPicture) {
     const { dispatch } = this.props;
 
     dispatch(selectPicture(picture));
@@ -51,7 +51,7 @@ class Gallery extends Component<Props, State> {
   handleClose() {
     const { dispatch } = this.props;
 
-    dispatch(selectPicture(null));
+    dispatch(selectPicture());
   }
 
   renderModal() {
@@ -72,7 +72,7 @@ class Gallery extends Component<Props, State> {
   render() {
     const { pictures } = this.props;
 
-    const hasMore = pictures.pages === undefined || pictures.page < pictures.pages;
+    const hasMore : boolean = pictures.pages === undefined || pictures.page < pictures.pages;
 
     return (
       <InfiniteScroll

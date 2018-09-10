@@ -4,15 +4,15 @@ import React from 'react';
 import ImageLoader from 'react-load-image';
 import { BubbleLoader } from 'react-css-loaders';
 
-import PictureImage from '../PictureImage';
+import PictureItemImage from '../PictureItemImage';
 import styles from './PictureItem.css';
 
-type Props = {
-  picture: Picture,
+type IProps = {
+  picture: IPicture,
   onSelect: Function
 };
 
-const PictureItem = (props: Props) => {
+const PictureItem = (props: IProps) => {
   const { picture } = props;
 
   return(
@@ -32,18 +32,18 @@ const PictureItem = (props: Props) => {
       </div>
 
       <ImageLoader src={picture.src}>
-        <PictureImage onClick={() => props.onSelect(props.picture)}/>
+        <PictureItemImage onClick={() => props.onSelect(props.picture)}/>
 
-        <PictureImage>
+        <PictureItemImage>
           Error
-        </PictureImage>
+        </PictureItemImage>
 
-        <PictureImage>
+        <PictureItemImage>
           <BubbleLoader
             color="#fff"
             size="4"
           />
-        </PictureImage>
+        </PictureItemImage>
       </ImageLoader>
     </div>
   );

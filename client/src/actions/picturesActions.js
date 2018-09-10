@@ -1,3 +1,5 @@
+// @flow
+
 import axios from 'axios';
 
 import {
@@ -7,8 +9,17 @@ import {
   SELECT_PICTURE,
 } from '../actions/types';
 
-function parse(data) {
-  data.photo = data.photo.map(picture => {
+export type IPicturesAction = {
+  type: string,
+  payload: any,
+};
+
+type PromiseAction = Promise<IPicturesAction>;
+type ThunkAction = (dispatch: Dispatch) => any; // eslint-disable-line no-use-before-define
+type Dispatch = (action: IPicturesAction | ThunkAction | PromiseAction | Array<IPicturesAction>) => any;
+
+function parse(data: any): any {
+  const photo: Array<IPicture> = data.photo.map(picture => {
     const src = `https://farm2.staticflickr.com/${picture.server}/${picture.id}_${picture.secret}.jpg`;
     const href = `https://www.flickr.com/photos/${picture.owner}/${picture.id}/`;
 
@@ -19,13 +30,19 @@ function parse(data) {
     };
   });
 
-  return data;
+  return {
+    ...data,
+    photo
+  };
 }
 
-export const fetchPictures = (page) => (dispatch) => {
-  const params = { page };
+export const fetchPictures = (page: number): ThunkAction => (dispatch) => {
+  const params: any = { page };
 
-  dispatch({ type: FETCH_PICTURES_REQUEST });
+  dispatch({
+    type: FETCH_PICTURES_REQUEST,
+    payload: {}
+  });
 
   return axios.get('/api/v1/pictures', { params })
     .then(({ data }) => {
@@ -38,12 +55,11 @@ export const fetchPictures = (page) => (dispatch) => {
       dispatch({
         type: FETCH_PICTURES_FAILURE,
         payload: error,
-        error: true
       });
     });
 }
 
-export const selectPicture = (picture) => ({
+export const selectPicture = (picture?: IPicture) => ({
   type: SELECT_PICTURE,
   payload: picture,
 });

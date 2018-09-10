@@ -1,15 +1,15 @@
 // @flow
 
 import * as React from 'react';
-import styles from './PictureImage.css';
+import styles from './PictureItemImage.css';
 
-type Props = {
+type IProps = {
   children?: React.Node,
   src?: string,
   onClick: Function,
 };
 
-const PictureImage = (props: Props) => (
+const PictureItemImage = (props: IProps) => (
   <div
     className={styles.container}
     style={{backgroundImage: (props.src)? `url(${props.src})`: ''}}
@@ -19,4 +19,4 @@ const PictureImage = (props: Props) => (
   </div>
 );
 
-export default PictureImage;
+export default PictureItemImage;

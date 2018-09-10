@@ -2,13 +2,14 @@
 
 import React from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
+// @flow
 
 import Gallery from '../../containers/Gallery';
 import styles from './App.css';
 
-type Props = {};
+type IProps = {};
 
-const App = (props: Props) => (
+const App = (props: IProps) => (
   <Router>
     <div>
       <h1 className={styles.title}>

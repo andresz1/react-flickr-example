@@ -1,17 +1,30 @@
+// @flow
+
 import {
   FETCH_PICTURES_REQUEST,
   FETCH_PICTURES_SUCCESS,
   FETCH_PICTURES_FAILURE,
   SELECT_PICTURE,
 } from '../actions/types';
+import type { IPicturesAction } from '../actions/picturesActions';
 
-const initialState = {
-  photo: [],
-  page: 0,
-  selected: null,
+export type IPicturesState = {
+  page: number,
+  photo: Array<IPicture>,
+  pages?: number,
+  perpage?: number,
+  total?: number,
+  selected?: IPicture,
+  isFetching?: boolean,
+  error?: any,
 };
 
-const pictures = (state = initialState , { type, payload}) => {
+const initial: IPicturesState = {
+  page: 0,
+  photo: [],
+};
+
+const pictures = (state: IPicturesState = initial , { type, payload }: IPicturesAction): IPicturesState => {
   switch(type) {
     case FETCH_PICTURES_REQUEST:
       return {
@@ -27,12 +40,13 @@ const pictures = (state = initialState , { type, payload}) => {
         total: payload.total,
         photo: state.photo.concat(payload.photo),
         isFetching: false,
+        error: null,
       }
     case FETCH_PICTURES_FAILURE:
       return {
         ...state,
         isFetching: false,
-        errorMessage: payload.message,
+        error: payload.message,
       }
     case SELECT_PICTURE:
       return {

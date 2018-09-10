@@ -1,6 +1,6 @@
 /* eslint no-undef: 0 */
 
-declare type Picture = {
+declare type IPicture = {
   id: string,
   owner: string,
   secret: string,

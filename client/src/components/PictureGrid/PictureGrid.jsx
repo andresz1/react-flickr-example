@@ -5,12 +5,12 @@ import React from 'react';
 import PictureItem from '../PictureItem';
 import styles from './PictureGrid.css';
 
-type Props = {
-  pictures: Array<Picture>,
+type IProps = {
+  pictures: Array<IPicture>,
   onSelect: Function
 };
 
-const PictureGrid = (props: Props) => (
+const PictureGrid = (props: IProps) => (
   <div className={styles.container}>
     {props.pictures.map((picture, index) =>
       <PictureItem
