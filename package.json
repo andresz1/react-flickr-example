@@ -15,10 +15,9 @@
     "client:test": "cd client && cross-env CI=true npm run test",
     "server": "nodemon --watch server server/index.js",
     "server:docs": "apidoc -i server -o docs",
-    "server:test": "npm run server:test:integration",
-    "server:test:integration": "cross-env NODE_ENV=test mocha --exit server/api/tests/integration",
+    "server:test": "cross-env NODE_ENV=test mocha --exit server/api/tests/integration",
     "dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\"",
-    "test": "npm run client:test",
+    "test": "npm run server:test && npm run client:test",
     "heroku-postbuild": "cd client && npm install && npm install --only=dev --no-shrinkwrap && npm run build"
   },
   "repository": {
