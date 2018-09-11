@@ -27,7 +27,9 @@
     "flow-bin": "^0.80.0",
     "fs-extra": "3.0.1",
     "html-webpack-plugin": "2.29.0",
+    "identity-obj-proxy": "^3.0.0",
     "jest": "20.0.4",
+    "moxios": "^0.4.0",
     "object-assign": "4.1.1",
     "postcss-flexbugs-fixes": "3.2.0",
     "postcss-icss-values": "^2.0.1",
@@ -45,6 +47,7 @@
     "react-test-renderer": "^16.5.0",
     "redux": "^4.0.0",
     "redux-logger": "^3.0.6",
+    "redux-mock-store": "^1.5.3",
     "redux-thunk": "^2.3.0",
     "resolve": "1.6.0",
     "style-loader": "0.19.0",
@@ -88,7 +91,8 @@
       "[/\\\\]node_modules[/\\\\].+\\.(js|jsx|mjs)$"
     ],
     "moduleNameMapper": {
-      "^react-native$": "react-native-web"
+      "^react-native$": "react-native-web",
+      "\\.(css|less)$": "identity-obj-proxy"
     },
     "moduleFileExtensions": [
       "web.js",

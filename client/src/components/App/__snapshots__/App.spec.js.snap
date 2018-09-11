@@ -19,7 +19,7 @@ ShallowWrapper {
     "props": Object {
       "children": <div>
         <h1
-                className={undefined}
+                className="title"
         >
                 Flickr's latest photos
         </h1>
@@ -38,7 +38,7 @@ ShallowWrapper {
       "props": Object {
         "children": Array [
           <h1
-            className={undefined}
+            className="title"
 >
             Flickr's latest photos
 </h1>,
@@ -57,7 +57,7 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": "Flickr's latest photos",
-            "className": undefined,
+            "className": "title",
           },
           "ref": null,
           "rendered": "Flickr's latest photos",
@@ -89,7 +89,7 @@ ShallowWrapper {
       "props": Object {
         "children": <div>
           <h1
-                    className={undefined}
+                    className="title"
           >
                     Flickr's latest photos
           </h1>
@@ -108,7 +108,7 @@ ShallowWrapper {
         "props": Object {
           "children": Array [
             <h1
-              className={undefined}
+              className="title"
 >
               Flickr's latest photos
 </h1>,
@@ -127,7 +127,7 @@ ShallowWrapper {
             "nodeType": "host",
             "props": Object {
               "children": "Flickr's latest photos",
-              "className": undefined,
+              "className": "title",
             },
             "ref": null,
             "rendered": "Flickr's latest photos",

@@ -1,12 +1,18 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import App from './App';
+import PictureGrid from './PictureGrid';
 
 const setup = (setupProps = {}) => {
-  const defaultProps = {};
+  const defaultProps = {
+    pictures: [],
+    handleSelect: jest.fn()
+  };
   const props = { ...defaultProps, ...setupProps };
   const wrapper = shallow(
-    <App />
+    <PictureGrid
+      pictures={props.pictures}
+      onSelect={props.handleSelect}
+    />
   );
 
   return {
@@ -15,8 +21,7 @@ const setup = (setupProps = {}) => {
   };
 };
 
-
-describe('<App/>', () => {
+describe('<PictureGrid />', () => {
   it('renders without crashing', () => {
     const { wrapper } = setup();
     expect(wrapper).toMatchSnapshot();
