@@ -32,13 +32,12 @@ const pictures = (state: IPicturesState = initial , { type, payload }: IPictures
         isFetching: true,
       }
     case FETCH_PICTURES_SUCCESS:
+      const photo: Array<IPicture> = state.photo;
+
       return {
         ...state,
-        page: payload.page,
-        pages: payload.pages,
-        perpage: payload.perpage,
-        total: payload.total,
-        photo: state.photo.concat(payload.photo),
+        ...payload,
+        photo: photo.concat(payload.photo),
         isFetching: false,
         error: null,
       }

@@ -1,10 +1,12 @@
 import React from 'react';
 import { shallow } from 'enzyme';
+
 import PictureItemImage from './PictureItemImage';
+import { picture } from '../../fixtures';
 
 const setup = (setupProps = {}) => {
   const defaultProps = {
-    src: 'https://farm2.staticflickr.com/1848/44592167171_144e4f8561.jpg',
+    src: picture.src,
     handleClick: jest.fn()
   };
   const props = { ...defaultProps, ...setupProps };
