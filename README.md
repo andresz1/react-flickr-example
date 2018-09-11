@@ -2,6 +2,7 @@
 A simple project to practice [React](https://reactjs.org/) and [Express](https://expressjs.com/) basics :ghost: using [Redux](https://redux.js.org/). Live [here](https://react-flickr-example.herokuapp.com/). Shows you the public Flickr feed, allowing you to view the images either in a lightbox or on Flickr's site.
 
 ## Features
+- Full Stack App :fire: server exposes client (SPA) and a REST API.
 - Responsive Flickr's latest photos with caption and owner
 - Link to original photo post
 - Responsive lightbox with all photo information (you can also change the photo with :arrow_left: and :arrow_right: keys)
