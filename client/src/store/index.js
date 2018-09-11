@@ -8,8 +8,13 @@ import type { Store } from 'redux';
 import reducers from '../reducers';
 
 export default function configureStore(): Store {
-  return createStore(
-    reducers,
-    applyMiddleware(thunk, logger)
-  );
+  let middlewares;
+
+  if (process.env.NODE_ENV !== 'production')  {
+    middlewares = applyMiddleware(thunk, logger);
+  } else {
+    middlewares = applyMiddleware(thunk);
+  }
+
+  return createStore(reducers, middlewares);
 };
