@@ -19,7 +19,7 @@ const PictureItem = (props: IProps) => {
     <div className={styles.container}>
       <div className={styles.header}>
         <div className={styles.title}>
-          {props.picture.title || '-'}
+          lol {props.picture.title || '-'}
         </div>
 
         <div className={styles.description}>by&nbsp;
